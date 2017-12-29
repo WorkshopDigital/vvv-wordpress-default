@@ -15,7 +15,7 @@ touch ${VVV_PATH_TO_SITE}/log/access.log
 mkdir -p ${VVV_PATH_TO_SITE}/public_html
 cd ${VVV_PATH_TO_SITE}/public_html
 if ! $(wp core is-installed --allow-root); then
-  wp core download --path="${VVV_PATH_TO_SITE}" --allow-root
+  wp core download --path="${VVV_PATH_TO_SITE}/public_html" --allow-root
   wp core config --dbname="workshopdigital" --dbuser=wp --dbpass=wp --quiet --allow-root
   wp core install --url="${VVV_SITE_NAME}.test" --quiet --title="${VVV_SITE_NAME}" --admin_name=admin --admin_email="admin@${VVV_SITE_NAME}.test" --admin_password="password" --allow-root
 else
