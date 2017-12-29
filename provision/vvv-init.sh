@@ -12,7 +12,8 @@ touch ${VVV_PATH_TO_SITE}/log/error.log
 touch ${VVV_PATH_TO_SITE}/log/access.log
 
 # Install and configure the latest stable version of WordPress
-cd ${VVV_PATH_TO_SITE}
+mkdir -p ${VVV_PATH_TO_SITE}/public_html
+cd ${VVV_PATH_TO_SITE}/public_html
 if ! $(wp core is-installed --allow-root); then
   wp core download --path="${VVV_PATH_TO_SITE}" --allow-root
   wp core config --dbname="workshopdigital" --dbuser=wp --dbpass=wp --quiet --allow-root
